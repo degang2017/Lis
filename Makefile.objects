@@ -1,0 +1,26 @@
+lis.lo: /root/soft/php-7.1.10/ext/lis/lis.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis.c -o lis.lo 
+lis_application.lo: /root/soft/php-7.1.10/ext/lis/lis_application.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_application.c -o lis_application.lo 
+lis_exception.lo: /root/soft/php-7.1.10/ext/lis/lis_exception.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_exception.c -o lis_exception.lo 
+lis_config.lo: /root/soft/php-7.1.10/ext/lis/lis_config.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_config.c -o lis_config.lo 
+lis_request.lo: /root/soft/php-7.1.10/ext/lis/lis_request.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_request.c -o lis_request.lo 
+lis_loader.lo: /root/soft/php-7.1.10/ext/lis/lis_loader.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_loader.c -o lis_loader.lo 
+lis_router.lo: /root/soft/php-7.1.10/ext/lis/lis_router.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_router.c -o lis_router.lo 
+lis_view.lo: /root/soft/php-7.1.10/ext/lis/lis_view.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_view.c -o lis_view.lo 
+lis_model.lo: /root/soft/php-7.1.10/ext/lis/lis_model.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_model.c -o lis_model.lo 
+lis_container.lo: /root/soft/php-7.1.10/ext/lis/lis_container.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/root/soft/php-7.1.10/ext/lis $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /root/soft/php-7.1.10/ext/lis/lis_container.c -o lis_container.lo 
+$(phplibdir)/lis.la: ./lis.la
+	$(LIBTOOL) --mode=install cp ./lis.la $(phplibdir)
+
+./lis.la: $(shared_objects_lis) $(LIS_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_lis) $(LIS_SHARED_LIBADD)
+
