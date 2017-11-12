@@ -73,7 +73,7 @@ lis_container_t *lis_container_instance(lis_container_t *this_ptr) /* {{{ */
 void lis_container_add(zval *container) /* {{{ */
 {
     zval e_container;
-    if (ZEND_ADD_ARRAY_ELEMENT == Z_TYPE_P(container) || IS_UNDEF == Z_TYPE_P(container) || IS_NULL == Z_TYPE_P(container)) {
+    if (IS_FALSE == Z_TYPE_P(container) || IS_UNDEF == Z_TYPE_P(container) || IS_NULL == Z_TYPE_P(container)) {
         array_init(&e_container);
         zend_update_static_property(lis_container_ce, ZEND_STRL(LIS_CONTAINER_PROPERTY_NAME_CONTAINER), &e_container);
         zval_ptr_dtor(&e_container);
